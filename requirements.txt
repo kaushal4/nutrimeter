@@ -1,0 +1,10 @@
+# Flask for the web server
+flask
+
+# PyTorch and computer vision
+torch
+torchvision
+
+# Image processing and numerical operations
+numpy
+Pillow
