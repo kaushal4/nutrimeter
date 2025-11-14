@@ -57,7 +57,7 @@ class NutritionFinder:
             
         print("NutritionFinder is ready.")
 
-    def get_nutrition_profile(self, food_name: str, min_confidence=0.70):
+    def get_nutrition_profile(self, food_name: str, min_confidence=0.54):
         """
         Finds the nutrition profile for a given food name using semantic search.
         

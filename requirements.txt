@@ -26,3 +26,6 @@ qwen-vl-utils
 
 # For semantic search
 sentence-transformers
+
+# For UI
+streamlit
