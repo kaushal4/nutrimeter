@@ -1,7 +1,6 @@
 import torch
 import numpy as np
 from PIL import Image
-# --- 1. Import BitsAndBytesConfig ---
 from transformers import Qwen2VLForConditionalGeneration, AutoProcessor, BitsAndBytesConfig
 import json
 import re
@@ -88,7 +87,9 @@ class VLMClassifier:
         return Image.fromarray(collage_np)
 
     def _clean_json_scaffolding(self, text: str) -> str:
-        # (This function is identical)
+        """
+        Helper function to strip ```json markdown and other text.
+        """
         json_block_match = re.search(r"```json\s*(\{.*\S.*\}|\[.*\S.*\])\s*```", text, re.DOTALL)
         
         if json_block_match:
@@ -97,12 +98,16 @@ class VLMClassifier:
             return text
 
     def _get_vlm_response(self, collage_img: Image.Image, num_objects: int) -> list:
-        # (This function is identical, but includes the ValueError fix)
+        """
+        Sends the collage to the Qwen VLM and parses the JSON response.
+        Handles both object {"objects": [...]} and array [...] responses.
+        """
+        
         prompt = (
             f"This image shows {num_objects} objects in a row. "
             f"Identify each object, from left to right. "
             f"Return *only* a JSON list of their names, like: "
-            f"{{\"objects\": [\"name1\", \"name2\", ...]}}"
+            f"[\"name1\", \"name2\", ...]" # <-- Changed example to a simple array
         )
         
         messages = [
@@ -116,12 +121,10 @@ class VLMClassifier:
         ]
         
         try:
+            # --- (Inference code is the same) ---
             text = self.processor.apply_chat_template(
                 messages, tokenize=False, add_generation_prompt=True
             )
-            
-            # --- This is the fix for the ValueError ---
-            # Unpack only 2 returned values
             image_inputs, video_inputs = process_vision_info(messages)
             
             inputs = self.processor(
@@ -142,25 +145,38 @@ class VLMClassifier:
             output_text = self.processor.batch_decode(
                 generated_ids_trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
             )[0]
-            
+            # --- (End of inference code) ---
+
             print(f"\n--- VLM RAW RESPONSE ---\n{output_text}\n------------------------")
             
             cleaned_text = self._clean_json_scaffolding(output_text)
-            json_match = re.search(r"\{.*\S.*\}", cleaned_text, re.DOTALL)
+
+            # --- 1. THE NEW REGEX: Look for { } OR [ ] ---
+            json_match = re.search(r"(\{.*\S.*\}|\[.*\S.*\])", cleaned_text, re.DOTALL)
             
             if not json_match:
-                print(f"VLM Warning: No JSON block found in cleaned response.")
+                print(f"VLM Warning: No JSON object or array found in cleaned response.")
                 return ["unknown"] * num_objects
                 
             json_str = json_match.group(0)
             
             try:
+                # --- 2. THE NEW PARSING LOGIC ---
                 parsed_json = json.loads(json_str)
-                if "objects" in parsed_json and isinstance(parsed_json["objects"], list):
+                
+                # Check if the VLM returned a LIST (like ["apple", "apple"])
+                if isinstance(parsed_json, list):
+                    return parsed_json
+                
+                # Check if it returned an OBJECT (like {"objects": [...]})
+                elif isinstance(parsed_json, dict) and "objects" in parsed_json and isinstance(parsed_json["objects"], list):
                     return parsed_json["objects"]
+                
+                # Otherwise, the format is unknown
                 else:
-                    print(f"VVLM Warning: JSON in wrong format: {json_str}")
+                    print(f"VLM Warning: JSON in wrong format: {json_str}")
                     return ["unknown"] * num_objects
+                    
             except json.JSONDecodeError as e:
                 print(f"VLM JSONDecodeError: Failed to parse string: '{json_str}'")
                 print(f"Error was: {e}")

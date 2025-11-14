@@ -17,6 +17,8 @@ UPLOAD_DIR = os.path.join(BASE_DIR, 'uploads')
 # Directory for storing generated output images
 OUTPUT_DIR = os.path.join(BASE_DIR, 'outputs')
 
+SAM_CHECKPOINT = os.path.join(CHECKPOINT_DIR, 'sam_model.pth')
+
 # --- Server Settings ---
 # You can add other Flask settings here, e.g., DEBUG mode
 DEBUG = False
