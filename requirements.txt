@@ -8,3 +8,23 @@ torchvision
 # Image processing and numerical operations
 numpy
 Pillow
+
+# For SAM and image processing
+segment-anything
+opencv-python-headless
+
+# For YOLOv8 object detection
+ultralytics
+
+# For local VLMs (Hugging Face)
+transformers
+accelerate
+bitsandbytes
+
+# Required by Qwen
+einops
+tiktoken
+qwen-vl-utils
+
+# 8 bit quntization
+bitsandbytes

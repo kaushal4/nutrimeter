@@ -19,4 +19,4 @@ OUTPUT_DIR = os.path.join(BASE_DIR, 'outputs')
 
 # --- Server Settings ---
 # You can add other Flask settings here, e.g., DEBUG mode
-DEBUG = True
+DEBUG = False
