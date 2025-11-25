@@ -8,6 +8,7 @@ import os
 from inference.segmentor import Segmentor
 from inference.vlm_classifier import VLMClassifier
 from inference.nutrition import NutritionFinder
+from inference.nutritionist import Nutritionist
 from inference.estimator_3d import get_dimensions_from_mask
 
 # --- 1. Model Caching ---
@@ -28,14 +29,14 @@ def load_models():
         
     segmentor = Segmentor(model_path=SAM_CHECKPOINT)
     classifier = VLMClassifier()
-    nutrition_finder = NutritionFinder()
+    nutrition_finder: NutritionFinder = NutritionFinder()
+    nutritionist: Nutritionist = Nutritionist()
     
     print("--- [Streamlit] All models loaded successfully ---")
-    return segmentor, classifier, nutrition_finder
+    return segmentor, classifier, nutrition_finder, nutritionist
 
-# --- 2. Pipeline Logic ---
-# This function contains all the processing logic from your API
-def run_full_pipeline(image_np, segmentor, classifier, nutrition_finder):
+# pipeline
+def run_full_pipeline(image_np, segmentor, classifier, nutrition_finder, nutritionist: Nutritionist):
     """
     Runs the complete segmentation, classification, and nutrition
     pipeline on a single image.
@@ -131,11 +132,25 @@ def run_full_pipeline(image_np, segmentor, classifier, nutrition_finder):
     else:
         total_meal_nutrition = {"notes": "No items with valid area or nutrition data found."}
 
-    # 3.8: Build the final response
+    # 3.8: VLM Scene Analysis (Find missing items)
+    known_classes = [obj['class_name'] for obj in final_json_objects]
+    scene_items = classifier.analyze_scene(image_np, known_classes)
+    
+    # 3.9: Nutritionist Feedback
+    # Create a temporary json object to pass to the nutritionist
+    temp_json_output = {
+        "objects_detected": final_json_objects,
+        "total_meal_nutrition_est": total_meal_nutrition,
+    }
+    nutritionist_feedback = nutritionist.generate_feedback(temp_json_output, scene_items)
+
+    # 3.10: Build the final response
     json_output = {
         "pixels_per_cm_ratio_est": PIXELS_PER_CM,
         "objects_detected": final_json_objects,
         "total_meal_nutrition_est": total_meal_nutrition,
+        "scene_items_detected": scene_items,
+        "nutritionist_feedback": nutritionist_feedback
     }
     
     # Return the overlay image and the final JSON
@@ -147,7 +162,7 @@ st.set_page_config(layout="wide")
 st.title("🥗 NutriMeter: AI Nutrition Analysis")
 
 # Load models
-segmentor, classifier, nutrition_finder = load_models()
+segmentor, classifier, nutrition_finder, nutritionist = load_models()
 
 # UI for file upload
 uploaded_file = st.file_uploader("Upload an image of your meal...", type=["jpg", "jpeg", "png"])
@@ -163,7 +178,8 @@ if uploaded_file is not None and segmentor is not None:
             image_np, 
             segmentor, 
             classifier, 
-            nutrition_finder
+            nutrition_finder,
+            nutritionist
         )
 
     st.header("🔬 Your Analysis Results")
@@ -192,6 +208,18 @@ if uploaded_file is not None and segmentor is not None:
         
     else:
         col2.warning("Could not calculate total nutrition. No items were matched.")
+
+    # --- Nutritionist Feedback ---
+    st.markdown("---")
+    st.subheader("📋 Nutritionist Assessment")
+    
+    feedback = json_output.get("nutritionist_feedback", "")
+    if feedback:
+        st.markdown(feedback)
+    else:
+        st.info("No nutritionist feedback available.")
+    
+    st.markdown("---")
 
     # --- Full Width Breakdown ---
     st.subheader("Detected Item Breakdown")

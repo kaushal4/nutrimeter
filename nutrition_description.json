@@ -1,0 +1,246 @@
+{
+  "nutritional_components": {
+    "macronutrients": {
+      "protein_g": {
+        "name": "Protein",
+        "unit": "grams",
+        "benefits": "Essential for muscle growth and repair, enzyme and hormone production, immune system function, tissue maintenance, wound healing, and providing structure to cells. Acts as a secondary energy source when carbohydrates are insufficient.",
+        "deficiency_effects": "Muscle wasting (sarcopenia), weakened immune system, slow wound healing, edema (fluid retention), hair loss and brittle nails, stunted growth in children, increased infection risk, fatigue, poor concentration, kwashiorkor or marasmus in severe cases.",
+        "excess_effects": "Kidney strain especially in those with pre-existing kidney conditions, dehydration, calcium loss from bones, digestive issues like constipation, bad breath from ketosis, potential increased heart disease risk from high animal protein intake, weight gain if consuming excess calories.",
+        "healthy_level_benefits": "Optimal muscle maintenance and growth, steady energy levels, better satiety and weight management, strong immune function, healthy skin and hair, proper hormone balance, efficient metabolism, improved recovery from exercise and injury."
+      },
+      "total_fat_g": {
+        "name": "Total Fat",
+        "unit": "grams",
+        "benefits": "Provides concentrated energy (9 calories per gram), enables absorption of fat-soluble vitamins (A, D, E, K), essential for hormone production, protects organs, maintains cell membranes, supports brain function, provides essential fatty acids, helps regulate body temperature.",
+        "deficiency_effects": "Dry scaly skin, poor wound healing, hair loss, vitamin deficiencies (A, D, E, K), hormone imbalances, impaired brain function, increased infection risk, poor temperature regulation, menstrual irregularities in women, depression and mood disorders.",
+        "excess_effects": "Weight gain and obesity, increased cardiovascular disease risk, elevated cholesterol and triglycerides, fatty liver disease, insulin resistance and type 2 diabetes, increased inflammation, certain cancer risks, digestive discomfort, gallbladder problems.",
+        "healthy_level_benefits": "Balanced hormone production, optimal brain function and mood, healthy skin and hair, proper vitamin absorption, sustained energy levels, reduced inflammation when focusing on healthy fats, better appetite control, protection against heart disease when emphasizing unsaturated fats."
+      },
+      "saturated_fat_g": {
+        "name": "Saturated Fat",
+        "unit": "grams",
+        "benefits": "Provides energy, supports cell membrane structure, aids in hormone production particularly testosterone, helps with calcium incorporation into bones, provides fat-soluble vitamin carrier, has antimicrobial properties in gut.",
+        "deficiency_effects": "Rare in isolation but may contribute to very low testosterone levels, potential issues with fat-soluble vitamin absorption, compromised cell membrane integrity.",
+        "excess_effects": "Elevated LDL cholesterol, increased heart disease risk, stroke risk, insulin resistance, weight gain, increased inflammation, higher risk of certain cancers, cognitive decline in older adults, metabolic syndrome development.",
+        "healthy_level_benefits": "Maintained healthy cholesterol ratios, reduced cardiovascular disease risk, better insulin sensitivity, lower inflammation markers, optimal hormone levels without excess, reduced risk of metabolic disorders, better weight management."
+      },
+      "carbohydrate_g": {
+        "name": "Carbohydrates",
+        "unit": "grams",
+        "benefits": "Primary energy source for brain and muscles, spares protein from being used for energy, essential for central nervous system function, provides dietary fiber, supports gut health, aids in fat metabolism, quick energy for physical activity.",
+        "deficiency_effects": "Ketosis and potential ketoacidosis, fatigue and weakness, brain fog and poor concentration, bad breath, constipation from lack of fiber, muscle loss as protein is used for energy, mood swings and irritability, nutrient deficiencies if avoiding whole grains and fruits.",
+        "excess_effects": "Weight gain, blood sugar spikes and crashes, increased type 2 diabetes risk, tooth decay, metabolic syndrome, fatty liver disease, increased triglycerides, inflammation, energy crashes, potential nutrient displacement if from refined sources.",
+        "healthy_level_benefits": "Stable blood sugar and sustained energy, optimal brain function and mood, healthy digestive system, better athletic performance, adequate fiber intake, diverse nutrient intake from whole food sources, better sleep quality, reduced chronic disease risk."
+      },
+      "fiber_g": {
+        "name": "Dietary Fiber",
+        "unit": "grams",
+        "benefits": "Promotes healthy digestion and regular bowel movements, feeds beneficial gut bacteria, helps control blood sugar levels, lowers cholesterol, aids in weight management by increasing satiety, reduces risk of colorectal cancer, supports heart health.",
+        "deficiency_effects": "Constipation, hemorrhoids, diverticular disease, unstable blood sugar levels, higher cholesterol, increased hunger and overeating, poor gut microbiome diversity, increased risk of heart disease and diabetes, higher colorectal cancer risk, bloating and digestive discomfort.",
+        "excess_effects": "Gas and bloating especially if increased too quickly, abdominal cramping, diarrhea or loose stools, nutrient malabsorption particularly minerals, intestinal blockage in severe cases, dehydration if not drinking enough water.",
+        "healthy_level_benefits": "Regular comfortable bowel movements, healthy gut microbiome, stable blood sugar control, lower cholesterol levels, healthy weight maintenance, reduced cancer risk, better appetite control, reduced inflammation, improved immune function through gut health."
+      },
+      "added_sugars_g": {
+        "name": "Added Sugars",
+        "unit": "grams",
+        "benefits": "Quick energy source for immediate use, can help with rapid glycogen replenishment after intense exercise, may improve palatability of nutritious foods, can help preserve foods.",
+        "deficiency_effects": "No true deficiency as added sugars are not essential nutrients. Body can produce glucose from other sources.",
+        "excess_effects": "Weight gain and obesity, type 2 diabetes, tooth decay and cavities, fatty liver disease, heart disease, high blood pressure, chronic inflammation, acne, accelerated aging, addiction-like cravings, mood swings, nutrient displacement, metabolic syndrome.",
+        "healthy_level_benefits": "Minimal added sugar intake leads to stable blood sugar, better weight control, reduced inflammation, healthier teeth, improved mood stability, better skin health, reduced chronic disease risk, improved energy levels without crashes, better metabolic health, reduced cravings."
+      }
+    },
+    "minerals": {
+      "calcium_mg": {
+        "name": "Calcium",
+        "unit": "milligrams",
+        "benefits": "Essential for strong bones and teeth (99% stored there), enables muscle contractions including heartbeat, supports nerve signal transmission, blood clotting, hormone secretion, helps maintain normal blood pressure, may aid in weight management.",
+        "deficiency_effects": "Osteoporosis and increased fracture risk, osteopenia (low bone density), muscle cramps and spasms, numbness and tingling in fingers, abnormal heart rhythms, tooth decay, rickets in children, increased PMS symptoms, high blood pressure risk.",
+        "excess_effects": "Kidney stones, constipation, interference with iron and zinc absorption, hypercalcemia causing nausea and confusion, potential increased heart disease risk from supplements, soft tissue calcification, impaired kidney function.",
+        "healthy_level_benefits": "Strong bones and teeth throughout life, proper muscle function, optimal nerve transmission, normal blood pressure, reduced osteoporosis risk, healthy heart rhythm, proper blood clotting, potentially lower colorectal cancer risk."
+      },
+      "iron_mg": {
+        "name": "Iron",
+        "unit": "milligrams",
+        "benefits": "Essential component of hemoglobin for oxygen transport, supports energy production in cells, crucial for brain development and function, supports immune system, helps maintain healthy skin and hair, involved in DNA synthesis, temperature regulation.",
+        "deficiency_effects": "Iron deficiency anemia causing fatigue and weakness, pale skin, shortness of breath, dizziness, cold hands and feet, brittle nails, frequent infections, poor concentration and memory, restless leg syndrome, unusual cravings (ice, dirt), impaired child development.",
+        "excess_effects": "Nausea and stomach pain, constipation or diarrhea, liver damage (hemochromatosis), increased infection risk, joint pain, bronze skin discoloration, heart problems, diabetes risk, oxidative stress and cell damage, interference with zinc absorption.",
+        "healthy_level_benefits": "Optimal oxygen delivery to tissues, sustained energy levels, strong immune function, healthy cognitive function and memory, normal growth and development, healthy skin and hair, proper temperature regulation, reduced fatigue, better athletic performance."
+      },
+      "magnesium_mg": {
+        "name": "Magnesium",
+        "unit": "milligrams",
+        "benefits": "Involved in over 300 enzyme reactions, supports muscle and nerve function, energy production, protein synthesis, blood glucose control, blood pressure regulation, bone development, DNA synthesis, acts as natural calcium blocker for heart health.",
+        "deficiency_effects": "Muscle cramps and twitches, mental health issues including depression and anxiety, fatigue and weakness, osteoporosis, high blood pressure, irregular heartbeat, migraines, insulin resistance, poor sleep quality, numbness and tingling.",
+        "excess_effects": "Diarrhea (most common), nausea and abdominal cramping, muscle weakness, irregular heartbeat, low blood pressure, confusion, respiratory problems in extreme cases, kidney problems in those with impaired function.",
+        "healthy_level_benefits": "Optimal energy production, healthy heart rhythm, strong bones, balanced mood and reduced anxiety, better sleep quality, normal blood pressure, improved insulin sensitivity, reduced migraine frequency, proper muscle function, enhanced exercise performance."
+      },
+      "phosphorus_mg": {
+        "name": "Phosphorus",
+        "unit": "milligrams",
+        "benefits": "Works with calcium for bone and teeth formation, crucial for energy storage and use (ATP), helps filter waste in kidneys, supports muscle contractions, maintains normal heartbeat, assists in nerve signaling, DNA and RNA formation, cell membrane integrity.",
+        "deficiency_effects": "Weak bones and increased fracture risk, muscle weakness and pain, bone pain, fatigue, poor appetite, anxiety and irritability, numbness and tingling, irregular breathing, increased infection susceptibility, rickets in children.",
+        "excess_effects": "Calcium deposits in soft tissues, kidney damage and stones, reduced calcium absorption leading to weak bones, cardiovascular disease risk, itchy skin, muscle cramps, diarrhea, hardening of organs and tissues.",
+        "healthy_level_benefits": "Strong bones and teeth with calcium, optimal energy metabolism, proper kidney function, balanced pH levels, healthy cell membranes, efficient nutrient utilization, proper muscle and nerve function, DNA health maintenance."
+      },
+      "potassium_mg": {
+        "name": "Potassium",
+        "unit": "milligrams",
+        "benefits": "Critical electrolyte for fluid balance, enables muscle contractions including heartbeat, supports nerve signals, helps lower blood pressure, reduces kidney stone risk, may preserve bone density, helps regulate blood sugar, counteracts sodium effects.",
+        "deficiency_effects": "Muscle weakness and cramps, fatigue, constipation, irregular heartbeat (arrhythmia), increased blood pressure, kidney stone risk, bone turnover increase, glucose intolerance, bloating, numbness and tingling, mood changes including depression.",
+        "excess_effects": "Hyperkalemia causing irregular heartbeat, muscle weakness or paralysis, fatigue, nausea, chest pain, breathing difficulties, tingling sensations. Most dangerous for those with kidney problems or on certain medications.",
+        "healthy_level_benefits": "Normal blood pressure maintenance, reduced stroke risk, prevention of kidney stones, strong bones, proper muscle function, optimal heart rhythm, balanced fluid levels, reduced bloating, better glucose control, enhanced athletic recovery."
+      },
+      "sodium_mg": {
+        "name": "Sodium",
+        "unit": "milligrams",
+        "benefits": "Essential electrolyte for fluid balance, enables nerve impulse transmission, necessary for muscle contractions, helps maintain blood pressure and blood volume, aids in nutrient absorption in intestines, maintains acid-base balance.",
+        "deficiency_effects": "Rare but includes hyponatremia causing headache, nausea, confusion, fatigue, muscle cramps and weakness, seizures in severe cases, increased fall risk in elderly, cognitive impairment.",
+        "excess_effects": "High blood pressure, increased heart disease and stroke risk, kidney damage and stones, osteoporosis from calcium loss, stomach cancer risk, bloating and water retention, headaches, increased thirst, worsening of asthma symptoms.",
+        "healthy_level_benefits": "Proper fluid balance without excess retention, normal blood pressure, optimal nerve and muscle function, good athletic performance with proper hydration, reduced cardiovascular disease risk, less bloating, healthy kidney function, better bone health."
+      },
+      "zinc_mg": {
+        "name": "Zinc",
+        "unit": "milligrams",
+        "benefits": "Supports immune system function, wound healing, DNA synthesis, protein production, crucial for growth and development during pregnancy and childhood, supports taste and smell, may reduce inflammation, aids in vitamin A metabolism.",
+        "deficiency_effects": "Impaired immune function and frequent infections, slow wound healing, hair loss, diarrhea, loss of taste or smell, skin lesions and dermatitis, delayed sexual maturation, impotence, eye problems, weight loss, mental lethargy, growth retardation in children.",
+        "excess_effects": "Nausea and vomiting, loss of appetite, stomach cramps, diarrhea, headaches, reduced immune function paradoxically, copper deficiency leading to anemia, lower HDL cholesterol, altered iron function, metallic taste.",
+        "healthy_level_benefits": "Strong immune defense, rapid wound healing, optimal growth and development, healthy skin and hair, proper taste and smell function, good reproductive health, enhanced athletic performance, reduced duration of colds, better blood sugar control."
+      },
+      "copper_mg": {
+        "name": "Copper",
+        "unit": "milligrams",
+        "benefits": "Essential for iron absorption and red blood cell formation, supports immune function, helps form collagen and connective tissue, involved in energy production, maintains nerve cells and immune system, acts as antioxidant, supports brain development.",
+        "deficiency_effects": "Anemia unresponsive to iron, low white blood cell count, osteoporosis, nerve damage with numbness and tingling, coordination problems, extreme fatigue, pale skin, premature gray hair, vision problems, poor wound healing.",
+        "excess_effects": "Stomach pain and nausea, diarrhea, liver damage and cirrhosis, kidney damage, mental health changes including depression and anxiety, metallic taste, hemolytic anemia, lower zinc absorption.",
+        "healthy_level_benefits": "Optimal iron metabolism and prevention of anemia, healthy connective tissues, strong immune function, good energy production, healthy brain function, cardiovascular health, strong bones, antioxidant protection, proper nerve function."
+      },
+      "selenium_mcg": {
+        "name": "Selenium",
+        "unit": "micrograms",
+        "benefits": "Powerful antioxidant protecting cells from oxidative stress, supports thyroid hormone metabolism, boosts immune system, may reduce cancer risk, supports cardiovascular health, important for reproduction and DNA synthesis, may improve cognitive function.",
+        "deficiency_effects": "Keshan disease (heart muscle disease), Kashin-Beck disease (joint and bone disease), weakened immune system, thyroid dysfunction, increased cancer risk, male infertility, muscle weakness and pain, hair loss, mental fog, increased viral infection severity.",
+        "excess_effects": "Selenosis causing garlic breath odor, metallic taste, hair and nail loss or brittleness, skin lesions and rashes, nausea and diarrhea, fatigue, irritability, nervous system abnormalities, increased diabetes risk.",
+        "healthy_level_benefits": "Strong antioxidant defense, optimal thyroid function, enhanced immune response, potential cancer protection, improved fertility especially in men, cardiovascular protection, better cognitive function in aging, reduced inflammation, protection against viral infections."
+      }
+    },
+    "vitamins": {
+      "vitamin_c_mg": {
+        "name": "Vitamin C",
+        "unit": "milligrams",
+        "benefits": "Powerful antioxidant, essential for collagen synthesis, enhances iron absorption, supports immune system, helps wound healing, maintains healthy skin and blood vessels, involved in neurotransmitter production, may reduce chronic disease risk.",
+        "deficiency_effects": "Scurvy causing fatigue and weakness, swollen bleeding gums, joint pain, poor wound healing, dry damaged skin, easy bruising, weakened immunity and frequent infections, anemia, depression, tooth loss in severe cases.",
+        "excess_effects": "Diarrhea and gastrointestinal distress, nausea, stomach cramps, kidney stones in susceptible individuals, iron overload in those with hemochromatosis, interference with certain medical tests, potential pro-oxidant effects at very high doses.",
+        "healthy_level_benefits": "Strong immune function, healthy glowing skin, faster wound healing, reduced duration and severity of colds, better iron absorption, protection against cardiovascular disease, lower blood pressure, reduced gout attacks, improved mood, eye health protection."
+      },
+      "thiamin_mg": {
+        "name": "Thiamin (Vitamin B1)",
+        "unit": "milligrams",
+        "benefits": "Essential for energy metabolism from carbohydrates, supports nervous system function, required for muscle function including heart, aids in cognitive processes, helps prevent complications in nervous system, kidneys, and heart.",
+        "deficiency_effects": "Beriberi disease affecting cardiovascular and nervous systems, Wernicke-Korsakoff syndrome in alcoholics, fatigue and weakness, irritability and confusion, poor memory, loss of appetite, weight loss, muscle weakness and pain, enlarged heart, peripheral neuropathy.",
+        "excess_effects": "Very rare as excess is excreted in urine. Extremely high doses may cause drowsiness, muscle relaxation, allergic reactions in sensitive individuals.",
+        "healthy_level_benefits": "Optimal energy production from food, healthy nervous system function, proper muscle and heart function, clear thinking and memory, good appetite and digestion, reduced fatigue, prevention of diabetic complications, better stress management."
+      },
+      "riboflavin_mg": {
+        "name": "Riboflavin (Vitamin B2)",
+        "unit": "milligrams",
+        "benefits": "Crucial for energy production, helps break down proteins, fats, and carbohydrates, maintains healthy skin and eyes, supports red blood cell production, acts as antioxidant, helps convert other B vitamins to active forms.",
+        "deficiency_effects": "Cracked lips and corners of mouth, sore throat, swollen tongue, skin disorders and dermatitis, anemia, tired eyes and light sensitivity, cataracts risk, poor wound healing, hair loss, reproductive problems, slowed growth in children.",
+        "excess_effects": "Very rare as excess is excreted. May cause bright yellow urine (harmless), rare reports of diarrhea and increased urination at very high doses.",
+        "healthy_level_benefits": "Efficient energy metabolism, healthy skin and hair, good vision and eye health, proper red blood cell formation, antioxidant protection, reduced migraine frequency and severity, better athletic performance, healthy fetal development during pregnancy."
+      },
+      "niacin_mg": {
+        "name": "Niacin (Vitamin B3)",
+        "unit": "milligrams",
+        "benefits": "Essential for converting food to energy, supports DNA repair and stress responses, helps make sex and stress hormones, improves cholesterol levels, supports brain function, maintains healthy skin, aids in digestive system function.",
+        "deficiency_effects": "Pellagra causing dermatitis, diarrhea, dementia, and potentially death (4 Ds), fatigue, indigestion, canker sores, depression, vomiting, poor circulation, memory loss, confusion, skin becomes rough and red when exposed to sun.",
+        "excess_effects": "Niacin flush (red, warm, itchy skin), stomach upset, liver damage at high doses, increased blood sugar, gout, blurred vision, increased risk of irregular heartbeat, low blood pressure.",
+        "healthy_level_benefits": "Improved cholesterol profiles (higher HDL, lower LDL), better energy production, healthy brain function, good circulation, healthy skin, proper digestion, reduced inflammation, potential reduction in heart disease risk, better joint mobility."
+      },
+      "vitamin_b6_mg": {
+        "name": "Vitamin B6",
+        "unit": "milligrams",
+        "benefits": "Involved in over 100 enzyme reactions mostly related to protein metabolism, crucial for brain development and function, helps make neurotransmitters, supports immune function, helps form hemoglobin, may reduce PMS symptoms.",
+        "deficiency_effects": "Anemia, depression and confusion, weakened immune function, cracked lips and sore tongue, nerve damage with pain and numbness, increased infection risk, mood changes and irritability, morning sickness in pregnancy, increased homocysteine levels.",
+        "excess_effects": "Nerve damage causing numbness and difficulty walking (at very high doses), sensitivity to sunlight, nausea, heartburn, loss of appetite, headache, tingling and numbness in extremities.",
+        "healthy_level_benefits": "Optimal brain function and mood regulation, reduced PMS symptoms, lower heart disease risk through homocysteine regulation, better immune function, reduced pregnancy nausea, improved sleep through melatonin production, reduced inflammation, better protein utilization."
+      },
+      "folate_mcg": {
+        "name": "Folate (Vitamin B9)",
+        "unit": "micrograms",
+        "benefits": "Critical for DNA synthesis and repair, essential for proper fetal development preventing neural tube defects, red blood cell formation, supports rapid cell division and growth, helps lower homocysteine levels, supports mental health.",
+        "deficiency_effects": "Megaloblastic anemia, neural tube defects in developing fetuses, fatigue and weakness, gray hair, mouth sores, poor growth, swollen tongue, increased homocysteine leading to heart disease risk, cognitive decline, depression.",
+        "excess_effects": "May mask vitamin B12 deficiency leading to permanent nerve damage, possible increased cancer risk with synthetic folic acid, digestive issues, sleep problems, confusion, impaired immune function at very high doses.",
+        "healthy_level_benefits": "Prevention of birth defects, healthy red blood cell production, reduced heart disease risk, better cognitive function and reduced dementia risk, improved mood and reduced depression, healthy fetal development, reduced cancer risk, better DNA repair."
+      },
+      "vitamin_b12_mcg": {
+        "name": "Vitamin B12",
+        "unit": "micrograms",
+        "benefits": "Essential for nerve tissue health, brain function, red blood cell formation, DNA synthesis, helps prevent megaloblastic anemia, supports energy production, may prevent brain atrophy, supports bone health, crucial for mood regulation.",
+        "deficiency_effects": "Megaloblastic anemia, fatigue and weakness, nerve damage and numbness, difficulty walking, memory loss and cognitive decline, depression and mood disorders, glossitis and mouth ulcers, vision problems, increased heart disease risk.",
+        "excess_effects": "Generally very safe as excess is excreted. Rare cases of acne, rosacea, anxiety, or insomnia at extremely high doses. May interact with certain medications.",
+        "healthy_level_benefits": "Optimal energy levels, healthy nerve function, sharp memory and cognition, good mood and reduced depression risk, healthy red blood cells, reduced heart disease risk, strong bones, healthy pregnancy outcomes, better sleep quality."
+      },
+      "choline_mg": {
+        "name": "Choline",
+        "unit": "milligrams",
+        "benefits": "Essential for making acetylcholine neurotransmitter, supports brain development and function, helps make cell membranes, involved in fat metabolism and transport, supports liver function, important for fetal brain development, DNA synthesis.",
+        "deficiency_effects": "Fatty liver disease, muscle damage, cognitive decline, neural tube defects, increased homocysteine levels, kidney problems, pancreas issues, memory impairment, mood disorders, increased inflammation markers.",
+        "excess_effects": "Fishy body odor, excessive sweating, digestive issues including diarrhea, low blood pressure, liver damage at very high doses, increased TMAO production potentially affecting heart health.",
+        "healthy_level_benefits": "Optimal brain function and memory, healthy liver preventing fat accumulation, proper fetal brain development, better athletic performance, improved metabolism, reduced inflammation, better mood regulation, healthy cell membrane structure, efficient fat transport."
+      },
+      "vitamin_a_mcg": {
+        "name": "Vitamin A",
+        "unit": "micrograms",
+        "benefits": "Essential for vision especially night vision, supports immune system, important for reproduction and fetal development, maintains healthy skin and mucous membranes, supports bone growth, acts as antioxidant, regulates cell growth and differentiation.",
+        "deficiency_effects": "Night blindness and eventual complete blindness, dry eyes and skin, increased infection susceptibility especially respiratory and diarrheal, impaired growth in children, reproductive difficulties, hyperkeratosis (thickened skin), poor wound healing.",
+        "excess_effects": "Hypervitaminosis A causing nausea and headache, liver damage, bone and joint pain, skin changes and hair loss, birth defects if excessive during pregnancy, increased intracranial pressure, hypercalcemia, blurred vision.",
+        "healthy_level_benefits": "Optimal vision and eye health, strong immune defense, healthy skin and reduced acne, proper growth and development, healthy reproduction, cancer prevention potential, strong bones and teeth, antioxidant protection, healthy epithelial tissues."
+      },
+      "vitamin_e_mg": {
+        "name": "Vitamin E",
+        "unit": "milligrams",
+        "benefits": "Powerful antioxidant protecting cells from damage, supports immune function, prevents blood clots, important for skin health, may protect against chronic diseases, helps form red blood cells, aids in vitamin K use.",
+        "deficiency_effects": "Nerve and muscle damage, muscle weakness, vision problems, immune system impairment, hemolytic anemia in premature infants, poor reflexes and coordination, cognitive difficulties, increased infection risk.",
+        "excess_effects": "Increased bleeding risk especially with blood thinners, nausea and diarrhea, stomach cramps, fatigue, weakness, headache, blurred vision, increased risk of hemorrhagic stroke, potential prostate cancer risk.",
+        "healthy_level_benefits": "Strong antioxidant protection, healthy immune function, good skin health and reduced UV damage, potential cognitive protection in aging, reduced inflammation, better heart health, improved eye health, enhanced athletic recovery, healthy blood vessel function."
+      },
+      "vitamin_d_mcg": {
+        "name": "Vitamin D",
+        "unit": "micrograms",
+        "benefits": "Essential for calcium absorption and bone health, supports immune system, reduces inflammation, supports muscle function, may protect against chronic diseases, supports brain health and mood, regulates cell growth, important for pregnancy.",
+        "deficiency_effects": "Rickets in children, osteomalacia and osteoporosis in adults, increased infection risk, depression and seasonal affective disorder, muscle weakness and pain, fatigue, bone pain, increased fall risk, poor wound healing, hair loss.",
+        "excess_effects": "Hypercalcemia causing nausea and weakness, kidney stones and kidney damage, heart rhythm abnormalities, confusion, bone pain, calcium deposits in soft tissues, excessive thirst and urination.",
+        "healthy_level_benefits": "Strong bones and teeth, reduced fracture risk, better immune function, improved mood and reduced depression, optimal muscle function, reduced inflammation, lower risk of multiple sclerosis, better insulin sensitivity, healthy pregnancy outcomes, potential cancer protection."
+      },
+      "vitamin_k_mcg": {
+        "name": "Vitamin K",
+        "unit": "micrograms",
+        "benefits": "Essential for blood clotting, crucial for bone metabolism and health, may prevent arterial calcification, supports heart health, involved in cell growth regulation, may support cognitive health, important for bone mineralization.",
+        "deficiency_effects": "Excessive bleeding and bruising, poor blood clotting, heavy menstrual periods, blood in urine or stool, osteoporosis and increased fracture risk, arterial calcification, poor bone development in infants.",
+        "excess_effects": "Generally very safe with no known toxicity from food sources. Synthetic forms at very high doses may cause jaundice in infants. Can interfere with blood thinning medications.",
+        "healthy_level_benefits": "Proper blood clotting without excess, strong bones and reduced fracture risk, reduced arterial calcification, better heart health, optimal calcium metabolism, potential cognitive benefits in aging, healthy bone density maintenance, reduced bruising."
+      }
+    },
+    "other": {
+      "cholesterol_mg": {
+        "name": "Cholesterol",
+        "unit": "milligrams",
+        "note": "Dietary cholesterol is not essential as body produces what it needs",
+        "benefits": "Building block for cell membranes, precursor to vitamin D, sex hormones, and bile acids, supports brain function as part of myelin sheath, aids in digestion through bile production.",
+        "deficiency_effects": "True dietary deficiency doesn't occur as body produces adequate amounts. Extremely low cholesterol levels may be associated with depression, anxiety, cancer risk, hemorrhagic stroke, though causation is debated.",
+        "excess_effects": "May contribute to elevated blood cholesterol in some individuals, increased cardiovascular disease risk especially in those with genetic predisposition, atherosclerosis development, potential increased stroke risk, gallstone formation.",
+        "healthy_level_benefits": "Limiting dietary cholesterol helps maintain healthy blood cholesterol levels, reduced cardiovascular disease risk, better arterial health, lower inflammation markers, reduced risk of heart attack and stroke, especially important for those with familial hypercholesterolemia."
+      },
+      "water_g": {
+        "name": "Water",
+        "unit": "grams/percentage",
+        "note": "60-70% water content is ideal for whole foods",
+        "benefits": "Essential for all bodily functions, regulates body temperature, transports nutrients and oxygen, removes waste products, lubricates joints, protects organs and tissues, maintains blood volume, enables cellular processes, aids digestion.",
+        "deficiency_effects": "Dehydration causing fatigue, dizziness, confusion, constipation, kidney stones, urinary tract infections, decreased cognitive performance, headaches, low blood pressure, rapid heartbeat, heat injury, seizures in severe cases.",
+        "excess_effects": "Hyponatremia (water intoxication) causing nausea, confusion, seizures, coma in extreme cases, electrolyte imbalance, cellular swelling, increased urination, potential kidney stress.",
+        "healthy_level_benefits": "Optimal cellular function, better physical performance, improved brain function and mood, healthy skin appearance, efficient toxin removal, proper digestion and nutrient absorption, joint lubrication, temperature regulation, reduced kidney stone risk, better weight management."
+      }
+    }
+  }
+}

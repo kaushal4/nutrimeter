@@ -29,3 +29,7 @@ sentence-transformers
 
 # For UI
 streamlit
+
+# deepseek
+openai
+python-dotenv

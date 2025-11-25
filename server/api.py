@@ -22,23 +22,19 @@ def allowed_file(filename):
 
 @bp.route('/predict', methods=['POST'])
 def predict():
-    # 1. --- File Upload (unchanged) ---
     if 'file' not in request.files:
         return jsonify({"error": "No file part in the request"}), 400
     file = request.files['file']
     if file.filename == '' or not allowed_file(file.filename):
         return jsonify({"error": "Invalid or no file selected"}), 400
 
-    # 2. --- Save File (unchanged) ---
     filename = secure_filename(file.filename)
     upload_path = os.path.join(current_app.config['UPLOAD_DIR'], filename)
     file.save(upload_path)
     
-    # 3. --- Run the Full ML Pipeline ---
     try:
         segmentor = current_app.segmentor
         classifier = current_app.classifier
-        # --- 3.1: Get the new nutrition_finder ---
         nutrition_finder = current_app.nutrition_finder 
         
         if segmentor is None or classifier is None or nutrition_finder is None:
@@ -46,14 +42,14 @@ def predict():
 
         PIXELS_PER_CM = 50.0 
         
-        # 3.2: Run SAM (unchanged)
+        # Run SAM
         image_np = segmentor.load_image(upload_path)
         sam_masks = segmentor.generate_masks(image_np)
         
-        # 3.3: Run VLM Classifier (unchanged)
+        # Run VLM Classifier
         matched_objects = classifier.run_classification(image_np, sam_masks, top_n=5)
         
-        # 3.4: Group masks by class name (unchanged)
+        # Group masks by class name
         grouped_masks = {} 
         for obj in matched_objects:
             label = obj['class_name']
@@ -61,22 +57,22 @@ def predict():
                 grouped_masks[label] = []
             grouped_masks[label].append(obj['segmentation'])
 
-        # 3.5: Merge the grouped masks (unchanged)
+        # Merge the grouped masks
         labeled_merged_masks = {} 
         for label, masks_list in grouped_masks.items():
             merged_mask = Segmentor.merge_masks(masks_list)
             if merged_mask.any():
                 labeled_merged_masks[label] = merged_mask
         
-        # 3.6: Create Output Image (unchanged)
+        # Create Output Image
         overlay_image = segmentor.draw_labeled_boundaries(image_np, labeled_merged_masks)
         
-        # 3.7: Save Output Image (unchanged)
+        # Save Output Image
         output_filename = f"out_{filename}"
         output_path = os.path.join(current_app.config['OUTPUT_DIR'], output_filename)
         segmentor.save_image(overlay_image, output_path)
 
-        # --- 3.8: NEW STEP: Create Final JSON & Get Nutrition ---
+        # Create Final JSON & Get Nutrition
         
         final_json_objects = []
         total_meal_nutrition = {}
@@ -99,11 +95,10 @@ def predict():
             else:
                 dimensions = {"shape_assumption": "unknown", "notes": "no 3d model for this class"}
             
-            # --- 3.8.1: Call NutritionFinder ---
-            # This returns the nutrition profile per 100g
+            # Call NutritionFinder
             nutrition_profile = nutrition_finder.get_nutrition_profile(label)
             
-            # --- 3.8.2: Sum the area if nutrition was found ---
+            # Sum the area if nutrition was found
             if nutrition_profile:
                 total_valid_area += merged_area
                 
@@ -117,7 +112,7 @@ def predict():
                 "nutrition_per_100g": nutrition_profile # Add per-item nutrition
             })
 
-        # --- 3.9: NEW STEP: Calculate Weighted Average for Total Meal ---
+        # Calculate Weighted Average for Total Meal
         if total_valid_area > 0 and final_json_objects:
             weighted_nutrition_per_100g = {}
             
@@ -143,7 +138,7 @@ def predict():
                     # Round to 2 decimal places for cleanliness
                     weighted_nutrition_per_100g[key] = round(weighted_sum, 2)
                 
-                # --- 3.10: NEW STEP: Convert to "Per Ounce" ---
+                # Convert to "Per Ounce"
                 # 1 ounce = 28.35g. So, (value / 100g) * 28.35g
                 weighted_nutrition_per_ounce = {
                     key: round(value * 0.2835, 2)
@@ -160,11 +155,11 @@ def predict():
         else:
             total_meal_nutrition = {"notes": "No items with valid area or nutrition data found."}
 
-        # --- 3.11: Build the final response ---
+        # Build the final response
         json_output = {
             "pixels_per_cm_ratio_est": PIXELS_PER_CM,
             "objects_detected": final_json_objects,
-            "total_meal_nutrition_est": total_meal_nutrition, # Add the new block
+            "total_meal_nutrition_est": total_meal_nutrition,
             "output_image_url": f"/api/outputs/{output_filename}"
         }
         

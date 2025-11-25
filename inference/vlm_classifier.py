@@ -188,6 +188,78 @@ class VLMClassifier:
             print(traceback.format_exc())
             return ["error"] * num_objects
 
+    def analyze_scene(self, image_np: np.ndarray, known_classes: list) -> list:
+        """
+        Sends the full image to the VLM to identify items *not* in known_classes.
+        Returns a list of new class names.
+        """
+        pil_image = Image.fromarray(image_np)
+        
+        known_str = ", ".join(known_classes) if known_classes else "nothing"
+        
+        prompt = (
+            f"Here is an image of a meal. We have already identified the following items: {known_str}. "
+            f"Identify any *other* food items in the scene that are not in this list. "
+            f"Return *only* a JSON list of these additional items, like [\"item1\", \"item2\"]. "
+            f"If there are no other items, return []."
+        )
+        
+        messages = [
+            {
+                "role": "user",
+                "content": [
+                    {"type": "image", "image": pil_image},
+                    {"type": "text", "text": prompt}
+                ]
+            }
+        ]
+        
+        try:
+            text = self.processor.apply_chat_template(
+                messages, tokenize=False, add_generation_prompt=True
+            )
+            image_inputs, video_inputs = process_vision_info(messages)
+            
+            inputs = self.processor(
+                text=[text],
+                images=image_inputs,
+                videos=video_inputs,
+                padding=True,
+                return_tensors="pt",
+            )
+            inputs = inputs.to(self.model.device)
+
+            generated_ids = self.model.generate(**inputs, max_new_tokens=100, do_sample=False)
+            
+            generated_ids_trimmed = [
+                out_ids[len(in_ids) :] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
+            ]
+            
+            output_text = self.processor.batch_decode(
+                generated_ids_trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
+            )[0]
+            
+            print(f"\n--- VLM SCENE ANALYSIS ---\n{output_text}\n------------------------")
+            
+            cleaned_text = self._clean_json_scaffolding(output_text)
+            json_match = re.search(r"\[.*\S.*\]", cleaned_text, re.DOTALL)
+            
+            if json_match:
+                try:
+                    new_items = json.loads(json_match.group(0))
+                    if isinstance(new_items, list):
+                        return [str(item).lower() for item in new_items]
+                except:
+                    pass
+            
+            return []
+
+        except Exception as e:
+            print(f"Error during VLM scene analysis: {e}")
+            return []
+
+
+
     def run_classification(self, image_np: np.ndarray, sam_masks: list, top_n: int = 5) -> list:
         # (This function is identical, but includes the zip() fix)
         top_masks = self._filter_and_sort_masks(image_np, sam_masks, top_n)

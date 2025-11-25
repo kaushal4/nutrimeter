@@ -1,0 +1,152 @@
+{
+  "macronutrients": {
+    "protein_g": {
+      "bad": "<2.5",
+      "good": "5-10",
+      "great": ">10"
+    },
+    "total_fat_g": {
+      "bad": ">15.6",
+      "good": "3.9-15.6",
+      "great": "<3.9"
+    },
+    "saturated_fat_g": {
+      "bad": ">4",
+      "good": "1-4",
+      "great": "<1"
+    },
+    "carbohydrate_g": {
+      "low": "<13.75",
+      "moderate": "13.75-55",
+      "high": ">55"
+    },
+    "fiber_g": {
+      "bad": "<1.4",
+      "good": "2.8-5.6",
+      "great": ">5.6"
+    },
+    "added_sugars_g": {
+      "bad": ">10",
+      "good": "2.5-10",
+      "great": "<2.5"
+    }
+  },
+  "minerals": {
+    "calcium_mg": {
+      "bad": "<65",
+      "good": "130-260",
+      "great": ">260"
+    },
+    "iron_mg": {
+      "bad": "<0.9",
+      "good": "1.8-3.6",
+      "great": ">3.6"
+    },
+    "magnesium_mg": {
+      "bad": "<21",
+      "good": "42-84",
+      "great": ">84"
+    },
+    "phosphorus_mg": {
+      "bad": "<62.5",
+      "good": "125-250",
+      "great": ">250"
+    },
+    "potassium_mg": {
+      "bad": "<235",
+      "good": "470-940",
+      "great": ">940"
+    },
+    "sodium_mg": {
+      "bad": ">460",
+      "good": "115-460",
+      "great": "<115"
+    },
+    "zinc_mg": {
+      "bad": "<0.55",
+      "good": "1.1-2.2",
+      "great": ">2.2"
+    },
+    "copper_mg": {
+      "bad": "<0.045",
+      "good": "0.09-0.18",
+      "great": ">0.18"
+    },
+    "selenium_mcg": {
+      "bad": "<2.75",
+      "good": "5.5-11",
+      "great": ">11"
+    }
+  },
+  "vitamins": {
+    "vitamin_c_mg": {
+      "bad": "<4.5",
+      "good": "9-18",
+      "great": ">18"
+    },
+    "thiamin_mg": {
+      "bad": "<0.06",
+      "good": "0.12-0.24",
+      "great": ">0.24"
+    },
+    "riboflavin_mg": {
+      "bad": "<0.065",
+      "good": "0.13-0.26",
+      "great": ">0.26"
+    },
+    "niacin_mg": {
+      "bad": "<0.8",
+      "good": "1.6-3.2",
+      "great": ">3.2"
+    },
+    "vitamin_b6_mg": {
+      "bad": "<0.085",
+      "good": "0.17-0.34",
+      "great": ">0.34"
+    },
+    "folate_mcg": {
+      "bad": "<20",
+      "good": "40-80",
+      "great": ">80"
+    },
+    "vitamin_b12_mcg": {
+      "bad": "<0.12",
+      "good": "0.24-0.48",
+      "great": ">0.48"
+    },
+    "choline_mg": {
+      "bad": "<27.5",
+      "good": "55-110",
+      "great": ">110"
+    },
+    "vitamin_a_mcg": {
+      "bad": "<45",
+      "good": "90-180",
+      "great": ">180"
+    },
+    "vitamin_e_mg": {
+      "bad": "<0.75",
+      "good": "1.5-3",
+      "great": ">3"
+    },
+    "vitamin_d_mcg": {
+      "bad": "<1",
+      "good": "2-4",
+      "great": ">4"
+    },
+    "vitamin_k_mcg": {
+      "bad": "<6",
+      "good": "12-24",
+      "great": ">24"
+    }
+  },
+  "other": {
+    "cholesterol_mg": {
+      "note": "Limit as much as possible",
+      "daily_limit": "<300"
+    },
+    "water_g": {
+      "note": "Generally 60-70% water content is good for whole foods"
+    }
+  }
+}

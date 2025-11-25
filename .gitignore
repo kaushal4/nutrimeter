@@ -2,3 +2,5 @@
 /uploads
 /checkpoints
 /venv
+__pycache__/
+.env

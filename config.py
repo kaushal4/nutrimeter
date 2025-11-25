@@ -2,6 +2,8 @@
 
 import os
 
+from flask.cli import load_dotenv
+
 # Get the absolute path of the project's root directory
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
@@ -19,6 +21,10 @@ OUTPUT_DIR = os.path.join(BASE_DIR, 'outputs')
 
 SAM_CHECKPOINT = os.path.join(CHECKPOINT_DIR, 'sam_model.pth')
 
+load_dotenv()
+
+DEEPSEEK_API_KEY = os.environ.get('DEEPSEEK_API_KEY')
+DEEPSEEK_BASE_URL = "https://api.deepseek.com"
+
 # --- Server Settings ---
-# You can add other Flask settings here, e.g., DEBUG mode
 DEBUG = False
